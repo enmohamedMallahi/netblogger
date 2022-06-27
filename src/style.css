@@ -8,6 +8,17 @@ body {
   margin: 0;
 }
 
+article p {
+  text-align: justify;
+  margin-bottom: 10px;
+}
+
+article h1,
+h2,
+h3 {
+  text-transform: capitalize;
+}
+
 /* Navbar */
 
 .navbar {
@@ -33,6 +44,11 @@ body {
 
 .navbar a {
   text-decoration: none;
+  color: #000;
+}
+
+.navbar a:hover {
+  border-bottom: 2px solid #e2ddca;
 }
 
 /* Utiltieys */
@@ -51,4 +67,25 @@ body {
 .banner h1,
 p {
   margin: 5px;
+}
+
+/* Articles */
+.articles {
+  padding: 2rem 0;
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.article {
+  /* border: 1px solid #333; */
+  text-align: center;
+}
+
+img {
+  width: 100%;
+}
+
+.article h3 {
+  margin: 0;
 }

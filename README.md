@@ -1,3 +1,3 @@
-# react-zm5vga
+# NetBlogger
 
-[Edit on StackBlitz ⚡️](https://stackblitz.com/edit/react-zm5vga)
+A blog website using React.js

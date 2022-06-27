@@ -1,15 +1,10 @@
-import React, { useState, useEffect } from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
+import { BlogsContext } from './context/BlogsContext';
 
 const Home = () => {
-  const [articles, setArticles] = useState([]);
-
-  useEffect(() => {
-    fetch('https://jsonplaceholder.typicode.com/posts')
-      .then((res) => res.json())
-      .then((data) => setArticles(data))
-      .catch((err) => console.log(err));
-  }, []);
+  // const [articles, setArticles] = useState([]);
+  const [articles, dispatch] = useContext(BlogsContext);
 
   return (
     <>

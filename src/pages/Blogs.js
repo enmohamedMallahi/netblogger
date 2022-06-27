@@ -13,15 +13,35 @@ const Blogs = () => {
 
   return (
     <>
-      <ul>
+      <div className="articles">
         {articles.map((article) => (
-          <li key={article.id}>
-            <Link to={`/blog/${article.id}`}>{article.title}</Link>
-          </li>
+          <div className="article">
+            <img
+              src="http://cdn.epicstream.com/assets/uploads/newscover/1596745837the_boys_deep.jpg"
+              alt=""
+            />
+            <div>
+              <h3>{article.title}</h3>
+              <p>
+                Quia et suscipit\nsuscipit recusandae consequuntur expedita et
+                cum\nreprehenderit molestiae
+              </p>
+              <button>Read More</button>
+            </div>
+          </div>
         ))}
-      </ul>
+      </div>
     </>
   );
 };
 
 export default Blogs;
+
+// const d = (
+//   <li key={article.id}>
+//     {/* <Link to={`/blog/${article.id}`}>{article.title}</Link> */}
+//     <div>
+//       <img src="https://via.placeholder.com/300" alt="" />
+//     </div>
+//   </li>
+// );
