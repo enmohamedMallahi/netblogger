@@ -19,6 +19,11 @@ h3 {
   text-transform: capitalize;
 }
 
+img,
+svg {
+  vertical-align: middle;
+}
+
 /* Navbar */
 
 .navbar {
@@ -48,7 +53,7 @@ h3 {
 }
 
 .navbar a:hover {
-  border-bottom: 2px solid #e2ddca;
+  border-bottom: 2px solid #4169e1;
 }
 
 /* Utiltieys */
@@ -58,7 +63,7 @@ h3 {
 }
 
 .banner {
-  background-color: royalblue;
+  background-color: #4169e1;
   padding: 1rem;
   color: #fff;
   text-align: center;
@@ -75,6 +80,18 @@ p {
   display: grid;
   gap: 1rem;
   grid-template-columns: repeat(3, 1fr);
+}
+
+@media screen and (max-width: 750px) {
+  .articles {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .articles {
+    grid-template-columns: repeat(1, 1fr);
+  }
 }
 
 .article {
@@ -114,6 +131,9 @@ img {
   border-radius: 5px;
   background-color: royalblue;
   color: #fff;
+  text-decoration: none;
+  display: block;
+  width: max-content;
 }
 
 .btn:hover {
@@ -121,8 +141,7 @@ img {
   cursor: pointer;
 }
 
-.btn-block {
-  display: block;
+.btn-wide {
   width: 100%;
 }
 
@@ -148,4 +167,25 @@ img {
   appearance: none;
   border-radius: 0.375rem;
   transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+/* Cards */
+.card {
+  display: flex;
+  flex-direction: column;
+  border: 1px rgba(0, 0, 0, 0.175) solid;
+  border-radius: 5px;
+}
+
+.card-body {
+  flex: 1 1;
+  padding: 0 1rem 1rem;
+}
+
+.bd-placeholder-img {
+  font-size: 1.125rem;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+  text-anchor: middle;
 }

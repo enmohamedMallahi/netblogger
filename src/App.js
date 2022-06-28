@@ -13,6 +13,7 @@ import NewBlog from './pages/NewBlog';
 
 // Components
 import Navbar from './components/Navbar';
+import Footer from './components/Footer';
 
 // Stylings
 import './style.css';
@@ -32,6 +33,7 @@ export default function App() {
             <Route path="*" element={<h1>Page Not Found</h1>} />
           </Routes>
         </main>
+        <Footer />
       </Router>
     </BlogsProvider>
   );

@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
-import { Link } from 'react-router-dom';
 import { BlogsContext } from '../context/BlogsContext';
+import BlogCards from '../components/BlogCard';
 
 const Home = () => {
   // const [articles, setArticles] = useState([]);
@@ -9,18 +9,19 @@ const Home = () => {
   return (
     <>
       <div className="banner">
-        <h1>Hello To NetBlogger!</h1>
+        <h1>Welcome To NetBlogger!</h1>
         <p>Start editing to see some magic happen :)</p>
       </div>
-      <ul>
+      <div className="articles">
         {articles.map((article) => (
-          <li key={article.id}>
-            <Link to={`/blog/${article.id}`}>{article.title}</Link>
-          </li>
+          <BlogCards article={article} />
         ))}
-      </ul>
+      </div>
     </>
   );
 };
 
 export default Home;
+// const f = (<li key={article.id}>
+//   <Link to={`/blog/${article.id}`}>{article.title}</Link>
+// </li>)
