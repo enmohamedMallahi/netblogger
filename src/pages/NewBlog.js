@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { BlogsContext } from './context/BlogsContext';
+import { BlogsContext } from '../context/BlogsContext';
 import { useForm } from '../hooks';
 
 const NewBlog = () => {
@@ -15,17 +15,19 @@ const NewBlog = () => {
     dispatch({
       type: 'add-article',
       blog: {
-        title,
-        body,
+        title: values.title,
+        body: values.body,
       },
     });
+    clearFields();
   };
 
   return (
-    <form onSubmit={submitHandler}>
+    <form className="form" onSubmit={submitHandler}>
       <div>
         <label htmlFor="title">Title</label>
         <input
+          className="form-control"
           value={values.title}
           onChange={changeHandler}
           name="title"
@@ -36,6 +38,7 @@ const NewBlog = () => {
       <div>
         <label htmlFor="body">Body</label>
         <input
+          className="form-control"
           value={values.body}
           onChange={changeHandler}
           name="body"
@@ -43,6 +46,9 @@ const NewBlog = () => {
           name="body"
         />
       </div>
+      <button className="btn btn-block" type="submit">
+        Submit
+      </button>
     </form>
   );
 };

@@ -9,6 +9,7 @@ import Home from './pages/Home';
 import Contact from './pages/Contact';
 import Blogs from './pages/Blogs';
 import Blog from './pages/Blog';
+import NewBlog from './pages/NewBlog';
 
 // Components
 import Navbar from './components/Navbar';
@@ -26,6 +27,7 @@ export default function App() {
             <Route path="/" element={<Home />} />
             <Route path="/blogs" element={<Blogs />} />
             <Route path="/blog/:id" element={<Blog />} />
+            <Route path="/new-blog" element={<NewBlog />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="*" element={<h1>Page Not Found</h1>} />
           </Routes>

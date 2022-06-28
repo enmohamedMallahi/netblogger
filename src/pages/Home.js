@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
-import { BlogsContext } from './context/BlogsContext';
+import { BlogsContext } from '../context/BlogsContext';
 
 const Home = () => {
   // const [articles, setArticles] = useState([]);

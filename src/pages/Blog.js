@@ -1,31 +1,28 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useContext } from 'react';
 import { useParams } from 'react-router-dom';
+import { BlogsContext } from '../context/BlogsContext';
 
-const Blog = () => {
-  const [article, setArticle] = useState({
-    id: '',
-    title: '',
-    body: '',
-  });
+const BlogPage = () => {
+  const [articles, dispatch] = useContext(BlogsContext);
   const { id } = useParams();
 
-  useEffect(() => {
-    fetch(`https://jsonplaceholder.typicode.com/posts/${id}`)
-      .then((res) => res.json())
-      .then((data) => setArticle(data))
-      .catch((err) => console.log(err));
-  }, []);
+  let article = articles.filter((article) => article.id == id)[0];
+  console.log(article);
 
   return (
     <>
       <article>
-        <h1>{article.title}</h1>
-        <h2>Second heading title</h2>
-        <p>{article.body}</p>
-        <p>{article.body}</p>
+        {article && (
+          <>
+            <h1>{article.title}</h1>
+            <h2>Second heading title</h2>
+            <p>{article.body}</p>
+            <p>{article.body}</p>
+          </>
+        )}
       </article>
     </>
   );
 };
 
-export default Blog;
+export default BlogPage;
