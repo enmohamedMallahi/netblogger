@@ -4,42 +4,31 @@ const NotFound = () => {
 	return (
 		<div>
 			<header class='flex justify-between items-center border-b py-4 md:py-4 mb-8  px-4 md:px-8'>
-				<a
+				<Link
 					href='/'
 					class='inline-flex items-center text-black-800 text-xl md:text-2xl font-bold gap-2.5'
 					aria-label='logo'
 				>
 					Satori Anime
-				</a>
+				</Link>
 
 				<nav class='hidden lg:flex lg:items-center gap-4'>
-					<a href='#' class='text-green-500 text-sm font-semibold'>
+					<Link href='/' class='text-green-500 text-sm font-semibold'>
 						Home
-					</a>
-					<a
-						href='#'
-						class='text-gray-600 hover:text-green-500 active:text-green-700 text-sm font-semibold transition duration-100'
-					>
-						Features
-					</a>
-					<a
-						href='#'
-						class='text-gray-600 hover:text-green-500 active:text-green-700 text-sm font-semibold transition duration-100'
-					>
-						Pricing
-					</a>
-					<a
-						href='#'
+					</Link>
+
+					<Link
+						href='/'
 						class='text-gray-600 hover:text-green-500 active:text-green-700 text-sm font-semibold transition duration-100'
 					>
 						About
-					</a>
-					<a
+					</Link>
+					<Link
 						href='#'
 						class='hidden lg:inline-block bg-gray-200 hover:bg-gray-300 focus-visible:ring ring-green-300 text-gray-500 active:text-gray-700 text-sm md:text-base font-semibold text-center rounded-lg outline-none transition duration-100 px-4 py-2'
 					>
 						Contact us
-					</a>
+					</Link>
 				</nav>
 
 				<button
