@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import Header from '../components/Header';
 
 const NotFound = () => {
@@ -64,12 +65,12 @@ const NotFound = () => {
 							The page you’re looking for doesn’t exist.
 						</p>
 
-						<a
-							href='#'
+						<Link
+							href='/'
 							class='inline-block bg-gray-200 hover:bg-gray-300 focus-visible:ring ring-indigo-300 text-gray-500 active:text-gray-700 text-sm md:text-base font-semibold text-center rounded-lg outline-none transition duration-100 px-4 py-2'
 						>
 							Go home
-						</a>
+						</Link>
 					</div>
 
 					<div class='h-80 md:h-auto bg-gray-100 overflow-hidden shadow-lg rounded-lg relative'>
