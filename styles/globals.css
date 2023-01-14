@@ -1,3 +1,35 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+article p {
+	@apply mb-4 text-[18px];
+}
+
+article h2 {
+	@apply text-2xl font-bold mb-4 capitalize;
+}
+
+article h3 {
+	@apply text-xl font-bold mb-4 capitalize;
+}
+
+article table,
+article th,
+article td {
+	@apply border p-2;
+	/* vertical-align: middle; */
+}
+
+article table p {
+	@apply mb-0;
+	/* vertical-align: middle; */
+}
+
+article th {
+	@apply bg-green-400 text-gray-100;
+}
+
+article ul {
+	@apply list-disc pl-4;
+}

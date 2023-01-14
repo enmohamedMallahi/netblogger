@@ -1,0 +1,99 @@
+import { useState, useEffect } from 'react';
+import Link from 'next/link';
+import Head from 'next/head';
+import { useRouter } from 'next/router';
+import { createClient } from 'contentful';
+import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
+import Header from '../../components/Header';
+import Comments from '../../components/Comments';
+
+const client = createClient({
+	space: process.env.CONTENTFUL_SPACE_ID,
+	accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
+});
+
+const BlogArticle = ({ post }) => {
+	const router = useRouter();
+
+	if (router.isFallback) {
+		return <h1>Loading...</h1>;
+	}
+
+	const { title, body } = post.fields;
+	const { createdAt } = post.sys;
+	const postContent = documentToReactComponents(body);
+	const imageUrl = post.fields.thumbnail.fields.file.url;
+
+	return (
+		<div>
+			<Head>
+				<title>{title}</title>
+				<meta name='description' content='Best Anime Blog Site' />
+				<link rel='icon' href='/favicon.ico' />
+			</Head>
+
+			<Header
+				post={{
+					title,
+					subtitle: 'subtitle here text dragon vall',
+					imageUrl,
+				}}
+			/>
+
+			<div
+				id='blog'
+				className='max-w-screen-2xl px-4 py-8 md:px-8 mx-auto'
+				// id={`blog-article-${url}`}
+			>
+				<article>
+					<h1 className='sr-only'>{title}</h1>
+
+					<div>{postContent}</div>
+				</article>
+			</div>
+
+			<Comments comments={[]} />
+
+			<footer className='max-w-screen-2xl px-4 md:px-8 mx-auto'>
+				<div className='text-gray-400 text-sm text-center border-t py-8'>
+					© 2023 - Satori Anime. All rights reserved.
+				</div>
+			</footer>
+		</div>
+	);
+};
+
+export default BlogArticle;
+
+export async function getStaticProps(context) {
+	const { items } = await client.getEntries({
+		content_type: 'posts',
+		'fields.slug[in]': context.params.slug,
+	});
+
+	if (!items.length) {
+		return {
+			redirect: {
+				destination: '/',
+				permanent: false,
+			},
+		};
+	}
+
+	return {
+		props: {
+			post: items[0],
+		},
+	};
+}
+
+export async function getStaticPaths() {
+	const res = await client.getEntries({ content_type: 'posts' });
+	const data = res.items;
+	console.log();
+
+	return {
+		paths: data.map((post) => ({ params: { slug: post.fields.slug } })),
+		fallback: true,
+	};
+}
