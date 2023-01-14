@@ -16,7 +16,7 @@ const Newsletter = () => {
 
 	return (
 		<div className='py-6 sm:py-8 lg:py-12'>
-			<div className='max-w-screen-2xl px-4 md:px-8 mx-auto'>
+			<div className='max-w-4xl px-4 md:px-8 mx-auto'>
 				<div className='flex flex-col items-center bg-gray-100 rounded-lg p-4 sm:p-8'>
 					<div className='mb-4 sm:mb-8'>
 						<h2 className='text-green-500 text-xl sm:text-2xl lg:text-3xl font-bold text-center'>

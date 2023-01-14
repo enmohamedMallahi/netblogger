@@ -1,9 +1,12 @@
 import { useState, useEffect } from 'react';
 
-const Comments = ({ comments }) => {
+const Comments = ({ comments, entryId }) => {
 	const [commentList, setCommentList] = useState(comments);
 
-	const handleSubmit = (e) => {
+	const handleSubmit = async (e) => {
+		const res = await fetch(
+			`https://api.contentful.com/spaces/${process.env.CONTENTFUL_SPACE_ID}/environments/master/entries/${entryId}/comments`
+		);
 		e.preventDefault();
 		const newComment = {
 			name: e.target.name.value,
@@ -15,7 +18,7 @@ const Comments = ({ comments }) => {
 	};
 
 	return (
-		<div className='max-w-screen-2xl px-4 md:px-8 mx-auto rounded-lg p-4'>
+		<div className='max-w-4xl px-4 md:px-8 mx-auto rounded-lg p-4'>
 			<h2 className='text-lg font-medium mb-4'>Comments</h2>
 			<div className='mb-4'>
 				{commentList.map((comment, i) => (

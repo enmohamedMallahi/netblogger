@@ -5,7 +5,7 @@ import { useRouter } from 'next/router';
 import { createClient } from 'contentful';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 import Header from '../../components/Header';
-import Comments from '../../components/Comments';
+import Newsletter from '../../components/Newsletter';
 
 const client = createClient({
 	space: process.env.CONTENTFUL_SPACE_ID,
@@ -42,7 +42,7 @@ const BlogArticle = ({ post }) => {
 
 			<div
 				id='blog'
-				className='max-w-screen-2xl px-4 py-8 md:px-8 mx-auto'
+				className='max-w-4xl px-4 py-8 md:px-8 mx-auto'
 				// id={`blog-article-${url}`}
 			>
 				<article>
@@ -52,7 +52,7 @@ const BlogArticle = ({ post }) => {
 				</article>
 			</div>
 
-			<Comments comments={[]} />
+			<Newsletter />
 
 			<footer className='max-w-screen-2xl px-4 md:px-8 mx-auto'>
 				<div className='text-gray-400 text-sm text-center border-t py-8'>
