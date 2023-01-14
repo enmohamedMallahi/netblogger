@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import Link from 'next/link';
 
 const Newsletter = () => {
 	const [email, setEmail] = useState('');
@@ -62,12 +63,12 @@ const Newsletter = () => {
 							Term of Service
 						</a>{' '}
 						and{' '}
-						<a
-							href='#'
+						<Link
+							href='/p/privacy-policy'
 							className='hover:text-green-500 active:text-green-600 underline transition duration-100'
 						>
 							Privacy Policy
-						</a>
+						</Link>
 						.
 					</p>
 				</div>
