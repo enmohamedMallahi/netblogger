@@ -16,7 +16,7 @@ const NotFound = () => {
 						</h1>
 
 						<p class='text-gray-500 md:text-lg text-center sm:text-left mb-8'>
-							The page you’re looking for doesn’t exist.
+							The page you&apos;re looking for doesn&apos;t exist.
 						</p>
 
 						<Link
