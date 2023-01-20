@@ -19,7 +19,7 @@ const BlogArticle = ({ post }) => {
 		return <h1>Loading...</h1>;
 	}
 
-	const { title, body } = post.fields;
+	const { title, body, subtitle } = post.fields;
 	const { createdAt } = post.sys;
 	const postContent = documentToReactComponents(body);
 	const imageUrl = post.fields.thumbnail.fields.file.url;
@@ -35,7 +35,7 @@ const BlogArticle = ({ post }) => {
 			<Header
 				post={{
 					title,
-					subtitle: 'subtitle here text dragon vall',
+					subtitle,
 					imageUrl,
 				}}
 			/>
