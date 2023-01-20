@@ -70,12 +70,12 @@ const Header = ({ full, post }) => {
 								Start reading
 							</a>
 
-							<a
+							<Link
 								href='/p/contact'
 								className='inline-block bg-gray-300 hover:opacity-80 focus-visible:ring ring-green-300 text-gray-500 active:text-gray-700 text-sm md:text-base font-semibold text-center rounded-lg outline-none transition duration-100 px-4 py-2'
 							>
 								Contact us
-							</a>
+							</Link>
 						</div>
 					</div>
 				</section>
