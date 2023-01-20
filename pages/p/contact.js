@@ -13,7 +13,7 @@ const ContactPage = () => {
 						</h2>
 
 						<p class='max-w-screen-md text-gray-500 md:text-lg text-center mx-auto'>
-							If you have any questions or feedback about our blog, please don't
+							If you have any questions or feedback about our blog, please don&apos;t
 							hesitate to reach out to us.
 						</p>
 					</div>
