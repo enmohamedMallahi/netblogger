@@ -1,6 +1,7 @@
 import Link from 'next/link';
 
 const Categories = ({ categories }) => {
+	console.log(categories);
 	return (
 		<div className=' py-6 sm:py-8 lg:py-12'>
 			<div className='max-w-screen-2xl px-4 md:px-8 mx-auto'>
