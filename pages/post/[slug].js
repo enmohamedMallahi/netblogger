@@ -19,16 +19,26 @@ const BlogArticle = ({ post }) => {
 		return <h1>Loading...</h1>;
 	}
 
-	const { title, body, subtitle } = post.fields;
+	const { title, body, subtitle, description, keywords } = post.fields;
 	const { createdAt } = post.sys;
 	const postContent = documentToReactComponents(body);
 	const imageUrl = post.fields.thumbnail.fields.file.url;
+
+	let keywordsText = '';
+	keywords.forEach((keyword) => {
+		keywordsText += keyword + ',';
+	});
+
+	// console.log(keywordsText);
+
+	console.log(post);
 
 	return (
 		<div>
 			<Head>
 				<title>{title}</title>
-				<meta name='description' content='Best Anime Blog Site' />
+				<meta name='description' content={description} />
+				<meta name='keywords' content={keywordsText} />
 				<link rel='icon' href='/favicon.ico' />
 			</Head>
 

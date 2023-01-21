@@ -29,7 +29,7 @@ const Newsletter = () => {
 					</div>
 
 					{alert && (
-						<div className='bg-blue-300 text-slate-700 rounded p-2 my-3 items-center'>
+						<div className='bg-green-300 text-slate-700 rounded p-2 my-3 items-center'>
 							<p>{alert}</p>
 							<button onClick={(e) => setAlert('')}>X</button>
 						</div>

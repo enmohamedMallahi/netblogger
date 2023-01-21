@@ -1,33 +1,13 @@
 import Head from 'next/head';
-import Link from 'next/link';
 import { createClient } from 'contentful';
 import Header from '../components/Header';
 import Categories from '../components/Categories';
 import BlogPostsList from '../components/BlogPostsList';
 import Newsletter from '../components/Newsletter';
+import { categories } from '../utils';
 
 export default function IndexPage({ posts, articles }) {
-	console.log(articles);
-	const categories = [
-		{
-			title: 'General',
-			image:
-				'https://p4.wallpaperbetter.com/wallpaper/745/67/618/jujutsu-kaisen-anime-boys-anime-hd-wallpaper-preview.jpg',
-			slug: 'general',
-		},
-		{
-			title: 'AOT',
-			image:
-				'https://i.pinimg.com/564x/7a/0d/c2/7a0dc24f568b81a39ba1ce797f65d355.jpg',
-			slug: 'aot',
-		},
-		{
-			title: 'Dragon Ball',
-			image:
-				'https://wallpapers.com/images/featured/dragon-ball-z-3izrb2kvqsbl3tun.webp',
-			slug: 'dragon-ball',
-		},
-	];
+	// console.log(articles);
 
 	return (
 		<div>

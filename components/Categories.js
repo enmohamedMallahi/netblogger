@@ -13,8 +13,8 @@ const Categories = ({ categories }) => {
 				<div className='grid grid-cols-1 sm:grid-cols-3 gap-4 md:gap-6 xl:gap-8'>
 					{categories.map((category) => (
 						<Link
-							key={category.slug}
-							href={`/category/${category.slug}`}
+							key={category.id}
+							href={`/category/${category.id}`}
 							className='group h-48 md:h-96 flex justify-end items-end bg-gray-100 overflow-hidden rounded-lg shadow-lg relative'
 						>
 							<img
