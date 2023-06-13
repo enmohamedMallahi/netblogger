@@ -31,5 +31,9 @@ article th {
 }
 
 article ul {
-	@apply list-disc pl-4;
+	@apply list-disc pl-8;
+}
+
+.header {
+	height: 90vh;
 }

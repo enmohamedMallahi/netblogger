@@ -1,6 +1,7 @@
 import Head from 'next/head';
 import { createClient } from 'contentful';
-import Header from '../components/Header';
+import Header from '../components/NewHeader';
+import Navbar from '../components/Navbar';
 import Categories from '../components/Categories';
 import BlogPostsList from '../components/BlogPostsList';
 import Newsletter from '../components/Newsletter';
@@ -17,7 +18,8 @@ export default function IndexPage({ posts, articles }) {
 				<link rel='icon' href='/favicon.ico' />
 			</Head>
 
-			<Header full />
+			<Navbar />
+			<Header />
 			<Categories categories={categories} />
 			<BlogPostsList posts={articles} />
 			<Newsletter />

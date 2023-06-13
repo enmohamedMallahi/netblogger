@@ -1,10 +1,10 @@
 import Link from 'next/link';
-import Header from '../../components/Header';
+import Navbar from '../../components/Navbar';
 
 const ContactPage = () => {
 	return (
 		<div>
-			<Header />
+			<Navbar />
 			<div class='max-w-screen-lg px-4 md:px-8 py-8 mx-auto'>
 				<div class='max-w-screen-2xl px-4 md:px-8 mx-auto'>
 					<div class='mb-10 md:mb-16'>
@@ -13,8 +13,8 @@ const ContactPage = () => {
 						</h2>
 
 						<p class='max-w-screen-md text-gray-500 md:text-lg text-center mx-auto'>
-							If you have any questions or feedback about our blog, please don&apos;t
-							hesitate to reach out to us.
+							If you have any questions or feedback about our blog, please
+							don&apos;t hesitate to reach out to us.
 						</p>
 					</div>
 

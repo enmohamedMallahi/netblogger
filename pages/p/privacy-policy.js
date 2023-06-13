@@ -1,10 +1,10 @@
 import Link from 'next/link';
-import Header from '../../components/Header';
+import Navbar from '../../components/Navbar';
 
 const PivacyPolicyPage = () => {
 	return (
 		<div>
-			<Header />
+			<Navbar />
 			<div class='max-w-4xl px-4 md:px-8 py-2 mx-auto'>
 				<article>
 					<h1 className='font-bold text-3xl py-4'>Privacy Policy</h1>

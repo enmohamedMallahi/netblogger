@@ -1,7 +1,8 @@
 import Head from 'next/head';
 import { useRouter } from 'next/router';
 import { createClient } from 'contentful';
-import Header from '../../components/Header';
+import Header from '../../components/NewHeader';
+import Navbar from '../../components/Navbar';
 import Newsletter from '../../components/Newsletter';
 import BlogPostsList from '../../components/BlogPostsList';
 import { categories } from '../../utils';
@@ -25,7 +26,7 @@ const CategoryPage = ({ posts, headerData }) => {
 				<meta name='description' content='Best Anime Blog Site' />
 				<link rel='icon' href='/favicon.ico' />
 			</Head>
-
+			<Navbar />
 			<Header
 				post={{
 					title: headerData.title,
@@ -33,11 +34,8 @@ const CategoryPage = ({ posts, headerData }) => {
 					imageUrl: headerData.image,
 				}}
 			/>
-
 			<BlogPostsList posts={posts} />
-
 			<Newsletter />
-
 			<footer className='max-w-screen-2xl px-4 md:px-8 mx-auto'>
 				<div className='text-gray-400 text-sm text-center border-t py-8'>
 					© 2023 - Satori Anime. All rights reserved.

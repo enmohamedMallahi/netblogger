@@ -2,6 +2,11 @@ import React from 'react';
 import Link from 'next/link';
 
 const Header = ({ full, post }) => {
+	const pages = [
+		{ url: '/', title: 'Home' },
+		{ url: '/about', title: 'About' },
+		{ url: '/p/contact', title: 'Contact us' },
+	];
 	if (full) {
 		return (
 			<div className='h-screen max-w-screen-2xl bg-green-100 px-4 md:px-8 mx-auto'>
@@ -15,22 +20,14 @@ const Header = ({ full, post }) => {
 					</Link>
 
 					<nav className='hidden lg:flex lg:items-center gap-4'>
-						<Link href='/' className='text-green-500 text-sm font-semibold'>
-							Home
-						</Link>
-
-						<Link
-							href='/'
-							className='text-gray-500 hover:text-green-500 active:text-green-700 text-sm font-semibold transition duration-100'
-						>
-							About
-						</Link>
-						<Link
-							href='/p/contact'
-							className='hidden lg:inline-block bg-gray-200 hover:bg-gray-300 focus-visible:ring ring-green-300 text-gray-500 active:text-gray-700 text-sm md:text-base font-semibold text-center rounded-lg outline-none transition duration-100 px-4 py-2'
-						>
-							Contact us
-						</Link>
+						{pages.map((page) => (
+							<Link
+								href={page.url}
+								className='text-green-500 text-sm font-semibold'
+							>
+								{page.title}
+							</Link>
+						))}
 					</nav>
 
 					<button
@@ -139,7 +136,7 @@ const Header = ({ full, post }) => {
 					</button>
 				</header>
 
-				<section className='flex flex-col items-center py-16 md:py-0 px-4 md:px-8'>
+				<section className='flex flex-col items-center py-16 md:py-0 px-4 md:px-8 mt-24'>
 					<div className='max-w-xl flex flex-col items-center text-center pt-8 lg:pt-32 pb-16 lg:pb-48'>
 						<h1 className='drop-shadow-2xl shadow-black text-black-800 text-3xl sm:text-4xl md:text-5xl font-bold mb-4 text-white'>
 							{post.title}

@@ -4,7 +4,8 @@ import Head from 'next/head';
 import { useRouter } from 'next/router';
 import { createClient } from 'contentful';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
-import Header from '../../components/Header';
+import Navbar from '../../components/Navbar';
+import Header from '../../components/NewHeader';
 import Newsletter from '../../components/Newsletter';
 
 const client = createClient({
@@ -41,6 +42,8 @@ const BlogArticle = ({ post }) => {
 				<meta name='keywords' content={keywordsText} />
 				<link rel='icon' href='/favicon.ico' />
 			</Head>
+
+			<Navbar />
 
 			<Header
 				post={{
