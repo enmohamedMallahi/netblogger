@@ -1,9 +1,9 @@
 export default function Example({ post }) {
 	if (post) {
 		return (
-			<div className='mx-auto max-w-7xl '>
+			<div className='max-w-7xl '>
 				<div
-					className='relative isolate overflow-hidden px-6 pt-16 sm:px-16 md:pt-24 lg:flex lg:items-center lg:justify-center lg:px-24 lg:pt-0 header text-white bg-gradient-to-br from-gray-700 to-gray-600'
+					className='relative isolate overflow-hidden flex items-center justify-center  lg:pt-0 header text-white bg-gradient-to-br from-gray-700 to-gray-600'
 					// style={{ backgroundImage: 'url(' + post.imageUrl + ')' }}
 				>
 					<img
@@ -30,7 +30,7 @@ export default function Example({ post }) {
 							</radialGradient>
 						</defs>
 					</svg>
-					<div className='mx-auto max-w-md text-center lg:mx-0 lg:flex-auto lg:justify-center lg:py-32 lg:text-left z-30'>
+					<div className='mx-auto max-w-md text-center lg:mx-0 lg:flex-auto lg:justify-center lg:py-32 lg:text-left z-30 px-4'>
 						<h2 className='text-3xl font-bold tracking-tight  sm:text-4xl'>
 							{post.title}
 						</h2>
